@@ -1,0 +1,46 @@
+{
+    "key": "ProjectConnect",
+    "name": "My app",
+    "description": "My very first app",
+    "baseUrl": "https://5d77-103-233-116-30.ngrok-free.appstart",
+    "authentication": {
+        "type": "jwt"
+    },
+    "lifecycle": {
+        "installed": "/installed"
+    },
+    "scopes": [
+        "read", 
+        "write"
+    ],
+    "apiVersion": 1,
+    "apiMigrations":{
+        "signed-install": true
+    },
+    "modules": {
+        "generalPages": [
+            {
+                "key": "hello-world-page-jira",
+                "location": "system.top.navigation.bar",
+                "name": {
+                    "value": "Hello"
+                },
+                "url": "/hello-world",
+                "conditions": [{
+                    "condition": "user_is_logged_in"
+                }]
+            },
+            {
+                "key": "hello-world-page-confluence",
+                "location": "system.header/left",
+                "name": {
+                    "value": "Hello World"
+                },
+                "url": "/hello-world",
+                "conditions": [{
+                    "condition": "user_is_logged_in"
+                }]
+            }
+        ]
+    }
+}
